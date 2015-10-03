@@ -8,19 +8,20 @@ DOM.decl('my-form',
 			'js' :  {
 				'inited' : function() {
 					this.bindTo('click', function(e) {
-						e.stopPropagation(); // останавливаем всплывание события
+						e.stopPropagation(); // РѕСЃС‚Р°РЅР°РІР»РёРІР°РµРј РІСЃРїР»С‹РІР°РЅРёРµ СЃРѕР±С‹С‚РёСЏ
 						this.buildForm();
 					});
 				}
 			}
 		},
-		buildForm : function() {
-			// форму строим только один раз
+		buildForm : function(formObj) {
+			// С„РѕСЂРјСѓ СЃС‚СЂРѕРёРј С‚РѕР»СЊРєРѕ РѕРґРёРЅ СЂР°Р·
 			if(this.params.opened) return false;
-			if(!(this.params && this.params.order)) return false;
+			formObj = formObj || this.params;
+			if(!(formObj && formObj.order)) return false;
 			var items = [];
-			for(var order in this.params.order){
-				var itemParams = this.params[this.params.order[order]];
+			for(var order in formObj.order){
+				var itemParams = formObj[formObj.order[order]];
 				items.push(itemParams);
 			}
 			this._showFormByTemplate(this.domElem,items);
