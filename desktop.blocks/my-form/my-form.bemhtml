@@ -1,0 +1,36 @@
+block('my-form').js()(function(){
+	return {
+	order: ["input1", "input2", "input3","input4"],
+	input1: {
+		"inputtype": "input",
+		"title": "First input",
+		"path": "root.input",
+		"editable": true,
+		"id":"input input__control i-bem"
+	},
+	input2: {
+		"inputtype": "checkbox",
+		"title": "Second input",
+		"path": "root.node1.node2.input",
+		"editable": true,
+		"name":"radiobtn",
+		"id":"checkbox checkbox__control i-bem"
+	},
+	input3: {
+		"inputtype": "radio",
+		"title": "Radio input 1",
+		"path": "root.node1.node2.input1",
+		"editable": true,
+		"name":"radiobtn",
+		"id":"radio__control i-bem"
+	},
+	input4: {
+		"inputtype": "radio",
+		"title": "Radio input 2",
+		"path": "root.node1.node2.input2",
+		"editable": true,
+		"name":"radiobtn",
+		"id":"radio radio__control i-bem"
+	}
+};
+});
